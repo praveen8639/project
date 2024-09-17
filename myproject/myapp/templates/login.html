@@ -1,0 +1,134 @@
+
+<form method="POST" id="loginForm">
+    {% csrf_token %}
+</form>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    background-image: url('https://media.istockphoto.com/id/1410950079/photo/modern-style-classroom-in-the-morning-3d-render.webp?b=1&s=170667a&w=0&k=20&c=D3KekIGN_W76ScIe_vKZURixg0hXdXnbPfhKywcItro=');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  }
+  body, html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+
+  /* Center the content vertically and horizontally */
+  .bg-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* Style for the image */
+  .img-container {
+    width: 30%; /* Adjust image width */
+  }
+
+  .img-container img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Add styles to the form container */
+  .container {
+    width: 30%; /* Adjust form width */
+    padding: 20px;
+    background-color: purple; /* Background color for login credentials */
+    border-radius: 3px; /* Decrease border radius */
+    border: 1px solid #ccc; /* Decrease border thickness */
+    margin-left: 20px; /* Add some spacing between the image and the form */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+
+  .container h1 {
+    text-align: center;
+    color: deeppink; /* Color for the header */
+  }
+
+  /* Full-width input fields */
+  input[type=text], input[type=password], input[type=email], input[type=tel] {
+    width: calc(100% - 12px); /* Adjust the input field width considering the border and padding */
+    padding: 6px; /* Adjust padding */
+    margin: 4px 0; /* Adjust margin */
+    border: 1px solid #ccc; /* Decrease border thickness */
+    border-radius: 3px; /* Decrease border radius */
+    box-sizing: border-box;
+  }
+
+  /* Set a style for the submit button */
+  .btn {
+    background-color: green;
+    color: white;
+    padding: 8px 16px; /* Adjust padding */
+    border: none;
+    border-radius: 3px; /* Decrease border radius */
+    cursor: pointer;
+    width: 50%;
+    display: block;
+    margin: 0 auto; /* Center the button */
+  }
+
+  .btn:hover {
+    background-color: green;
+  }
+
+  /* Style for the text inside the login credentials border */
+  .container label {
+    color: deeppink; /* Text color inside the login border */
+  }
+
+  /* Style for the signup button */
+  .signup-btn {
+    background-color: blue; /* Adjust button color */
+    color: white;
+    padding: 8px 16px; /* Adjust padding */
+    border: none;
+    border-radius: 3px; /* Decrease border radius */
+    cursor: pointer;
+    width: 50%;
+    display: block;
+    margin: 10px auto; /* Center the button with a margin */
+  }
+
+  .signup-btn:hover {
+    background-color: darkblue; /* Adjust hover color */
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-img-container">
+  <div class="img-container">
+    <img src="http://127.0.0.1:8000/static/web/s1.png" alt="School Image">
+  </div>
+
+  <form action="{% url 'login' %}" method="post" class="container">
+     <h1>Login</h1>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <br>
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required>
+    <br>
+    <label for="phone"><b>Phone Number</b></label>
+    <input type="tel" placeholder="Enter Phone Number" name="phone" required>
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br> <br> <br>
+    <button type="submit" class="btn">Login</button>
+    <button type="button" onclick="window.location.href='/signup_page.php'" class="signup-btn">Signup</button>
+  </form>
+</div>
+
+</body>
+</html>
